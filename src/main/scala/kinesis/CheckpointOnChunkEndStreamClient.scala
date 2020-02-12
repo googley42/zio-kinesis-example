@@ -50,13 +50,15 @@ object CheckpointOnChunkEndStreamClient {
             _ <- log(
               s"fiberID=$fiberId shard $shardName, about to process chunk $chunkIndex"
             )
-            ref <- Ref
+            maybeLastProcessed <- Ref
               .make[Option[Record[T]]](None) // create a new Ref to track last successfully processed record for this chunk
             count <- chunk
               .foldM[Blocking with Any, Throwable, Int](0) { (i, record) => // process each record in chunk
                 for {
-                  _ <- processRecord(record.data, refProcessedCount)
-                    .bracket(_ => ref.update(_ => Some(record)))(_ => ZIO.unit)
+                  _ <- processRecord(record.data, refProcessedCount) // we ensure that we do processRecord and update of Ref as an atomic operation
+                    .bracket(_ => maybeLastProcessed.update(_ => Some(record)))(
+                      _ => ZIO.unit
+                    )
                   count = i + 1
                   _ <- log(
                     s">>>> fiberID=$fiberId processed shard $shardName, record number $count, record = $record"
@@ -64,7 +66,9 @@ object CheckpointOnChunkEndStreamClient {
                 } yield count
               }
               .ensuring(
-                log(s">>>> calling finalizer for $fiberId") *> checkpoint(ref)
+                log(s">>>> calling finalizer for $fiberId") *> checkpoint(
+                  maybeLastProcessed
+                )
               )
           } yield count
 
