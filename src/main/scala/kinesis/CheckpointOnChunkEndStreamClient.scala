@@ -6,8 +6,10 @@ import zio.blocking.Blocking
 import zio.clock.Clock
 import zio.console.Console.Live.console._
 import zio.duration._
+import zio.logging.Logging
 import zio.stream.{ZSink, ZStream, ZStreamChunk}
 import zio.{Chunk, IO, Ref, Runtime, Schedule, UIO, ZIO}
+import zio.logging._
 
 object CheckpointOnChunkEndStreamClient {
 
@@ -18,8 +20,8 @@ object CheckpointOnChunkEndStreamClient {
                     Throwable,
                     (String,
                      ZStreamChunk[Any, Throwable, DynamicConsumer.Record[T]])]
-  ): ZStream[Clock with Blocking with Any, Throwable, Unit] = {
-    val outerStream: ZStream[Clock with Blocking with Any, Throwable, Unit] =
+  ): ZStream[Logging with Clock with Blocking with Any, Throwable, Unit] = {
+    val outerStream =
       stream.flatMapPar(Int.MaxValue) { t =>
         val (
           shardName: String,
@@ -30,9 +32,11 @@ object CheckpointOnChunkEndStreamClient {
           for {
             maybeLastOk <- ref.get
             _ <- maybeLastOk
-              .fold[ZIO[Clock with Blocking, Nothing, Unit]](UIO.unit)(
+              .fold[ZIO[Logging with Clock with Blocking, Nothing, Unit]](
+                UIO.unit
+              )(
                 rec =>
-                  log(s">>>> checkpointing ${rec.data}") *>
+                  info(s">>>> checkpointing ${rec.data}") *>
                     rec.checkpoint
                       .retry(Schedule.exponential(100.millis))
                       .ignore
@@ -42,34 +46,35 @@ object CheckpointOnChunkEndStreamClient {
         def processChunk(chunkIndex: Int, chunk: Chunk[Record[T]]) =
           for {
             fiberId <- ZIO.fiberId
-            _ <- log(
+            _ <- info(
               s"fiberID=$fiberId shard $shardName, about to process chunk $chunkIndex"
             )
             maybeLastProcessed <- Ref
               .make[Option[Record[T]]](None) // create a new Ref to track last successfully processed record for this chunk
             count <- chunk
-              .foldM[Blocking with Any, Throwable, Int](0) { (i, record) => // process each record in chunk
-                for {
-                  _ <- processRecord(record.data, refProcessedCount) // we ensure that we do processRecord and update of Ref as an atomic operation
-                    .bracket(_ => maybeLastProcessed.update(_ => Some(record)))(
-                      _ => ZIO.unit
+              .foldM[Logging with Blocking with Any, Throwable, Int](0) {
+                (i, record) => // process each record in chunk
+                  for {
+                    _ <- processRecord(record.data, refProcessedCount) // we ensure that we do processRecord and update of Ref as an atomic operation
+                      .bracket(
+                        _ => maybeLastProcessed.update(_ => Some(record))
+                      )(_ => ZIO.unit)
+                    count = i + 1
+                    _ <- info(
+                      s">>>> fiberID=$fiberId processed shard $shardName, record number $count, record = $record"
                     )
-                  count = i + 1
-                  _ <- log(
-                    s">>>> fiberID=$fiberId processed shard $shardName, record number $count, record = $record"
-                  )
-                } yield count
+                  } yield count
               }
               .ensuring(
-                log(s">>>> calling finalizer for $fiberId") *> checkpoint(
+                info(s">>>> calling finalizer for $fiberId") *> checkpoint(
                   maybeLastProcessed
                 )
               )
           } yield count
 
-        val program: ZIO[Clock with Blocking with Any, Throwable, Unit] = for {
+        val program = for {
           fiberId <- ZIO.fiberId
-          _ <- log(
+          _ <- info(
             s"shard $shardName, about to process records, fiberId $fiberId"
           )
           _ <- chunks
@@ -95,5 +100,7 @@ object CheckpointOnChunkEndStreamClient {
     } yield ()
   }
 
-  def log(s: String) = putStrLn(s)
+  def info(s: String) = {
+    log(LogLevel.Info)(s)
+  }
 }
