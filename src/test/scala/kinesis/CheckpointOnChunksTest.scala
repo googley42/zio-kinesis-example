@@ -23,9 +23,9 @@ object CheckpointOnChunksTest
           val applicationName = applicationNamePrefix + UUID
             .randomUUID()
             .toString
-          val nrRecords = 1000
-          val batchSize = 500
-          val nrShards = 8
+          val nrRecords = 10
+          val batchSize = 5
+          val nrShards = 1
           (Client.create <* createStream(streamName, nrShards) <* mgdDynamoDbTableCleanUp(
             applicationName
           )).use { client =>
@@ -40,8 +40,10 @@ object CheckpointOnChunksTest
                   applicationName = applicationName,
                   deserializer = TestMsgJsonSerde.jsonSerde
                 )
+              env <- TestUtils.clockWithBlockingM
               _ <- CheckpointOnChunkEndStreamClient
                 .consumeStream(refProcessedCount, runtime, stream)
+                .provide(env)
                 .runDrain
               count <- refProcessedCount.get
               _ <- zio.clock.Clock.Live.clock

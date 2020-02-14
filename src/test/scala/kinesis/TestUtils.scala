@@ -18,8 +18,24 @@ import zio.clock.Clock
 import zio.stream.ZStream
 import zio._
 import zio.duration._
+import zio.logging.slf4j.Slf4jLogger
+import zio.logging.{LogAnnotation, Logger, Logging}
 
 object TestUtils {
+  val logFormat = "[correlation-id = %s] %s"
+  val clockWithBlockingM = for {
+    env <- ZIO.environment[Blocking]
+    logging <- Slf4jLogger.make { (context, message) =>
+      val correlationId = LogAnnotation.CorrelationId.render(
+        context.get(LogAnnotation.CorrelationId)
+      )
+      logFormat.format(correlationId, message)
+    }
+  } yield
+    new Clock.Live with zio.blocking.Blocking with Logging {
+      override val blocking: Blocking.Service[Any] = env.blocking
+      override def logger: Logger = logging.logger
+    }
 
   val streamNamePrefix = "mercury-invoice-generator-dev"
   val applicationNamePrefix = "mercury-invoice-generator-zio-test-"

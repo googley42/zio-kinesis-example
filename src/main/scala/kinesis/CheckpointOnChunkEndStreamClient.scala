@@ -18,30 +18,25 @@ object CheckpointOnChunkEndStreamClient {
                     Throwable,
                     (String,
                      ZStreamChunk[Any, Throwable, DynamicConsumer.Record[T]])]
-  ) = {
-    val outerStream: ZStream[Blocking with Any, Throwable, Unit] =
+  ): ZStream[Clock with Blocking with Any, Throwable, Unit] = {
+    val outerStream: ZStream[Clock with Blocking with Any, Throwable, Unit] =
       stream.flatMapPar(Int.MaxValue) { t =>
         val (
           shardName: String,
           chunks: ZStreamChunk[Any, Throwable, DynamicConsumer.Record[T]]
         ) = t
 
-        val clockWithBlocking = new Clock.Live with zio.blocking.Blocking {
-          override val blocking: Blocking.Service[Any] =
-            runtime.environment.blocking
-        }
-
         def checkpoint(ref: Ref[Option[Record[T]]]) =
           for {
             maybeLastOk <- ref.get
-            _ <- maybeLastOk.fold[UIO[Unit]](UIO.unit)(
-              rec =>
-                log(s">>>> checkpointing ${rec.data}") *>
-                  rec.checkpoint
-                    .retry(Schedule.exponential(100.millis))
-                    .ignore
-                    .provide(clockWithBlocking)
-            )
+            _ <- maybeLastOk
+              .fold[ZIO[Clock with Blocking, Nothing, Unit]](UIO.unit)(
+                rec =>
+                  log(s">>>> checkpointing ${rec.data}") *>
+                    rec.checkpoint
+                      .retry(Schedule.exponential(100.millis))
+                      .ignore
+              )
           } yield ()
 
         def processChunk(chunkIndex: Int, chunk: Chunk[Record[T]]) =
@@ -72,7 +67,7 @@ object CheckpointOnChunkEndStreamClient {
               )
           } yield count
 
-        val program: ZIO[Blocking with Any, Throwable, Unit] = for {
+        val program: ZIO[Clock with Blocking with Any, Throwable, Unit] = for {
           fiberId <- ZIO.fiberId
           _ <- log(
             s"shard $shardName, about to process records, fiberId $fiberId"
