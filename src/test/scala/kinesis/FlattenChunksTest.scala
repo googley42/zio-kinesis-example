@@ -22,7 +22,7 @@ object FlattenChunksTest
           val applicationName = applicationNamePrefix + UUID
             .randomUUID()
             .toString
-          val nrRecords = 500000
+          val nrRecords = 100000
           val batchSize = 500
           val nrShards = 32
           (Client.create <* createStream(streamName, nrShards) <* mgdDynamoDbTableCleanUp(
@@ -39,7 +39,6 @@ object FlattenChunksTest
                   deserializer = TestMsgJsonSerde.jsonSerde
                 )
                 .flatMapPar(Int.MaxValue)(_._2.flattenChunks)
-//                  .take(nrRecords)
                 .tap(
                   r =>
                     for {
@@ -47,9 +46,10 @@ object FlattenChunksTest
                       _ <- putStrLn(
                         s"XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX count=$count Got record ${r.data}"
                       )
-                      _ <- checkpoint(r, refProcessedCount, 1000)
+                      _ <- checkpoint(r, refProcessedCount, 500)
                     } yield ()
                 )
+                .take(nrRecords)
                 .runDrain
               count <- refProcessedCount.get
               _ <- zio.clock.Clock.Live.clock

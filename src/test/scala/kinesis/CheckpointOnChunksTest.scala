@@ -23,9 +23,9 @@ object CheckpointOnChunksTest
           val applicationName = applicationNamePrefix + UUID
             .randomUUID()
             .toString
-          val nrRecords = 10
-          val batchSize = 5
-          val nrShards = 1
+          val nrRecords = 100000
+          val batchSize = 500
+          val nrShards = 32
           (Client.create <* createStream(streamName, nrShards) <* mgdDynamoDbTableCleanUp(
             applicationName
           )).use { client =>
