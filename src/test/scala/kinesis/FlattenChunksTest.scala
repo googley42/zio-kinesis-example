@@ -39,6 +39,7 @@ object FlattenChunksTest
                   deserializer = TestMsgJsonSerde.jsonSerde
                 )
                 .flatMapPar(Int.MaxValue)(_._2.flattenChunks)
+                .take(nrRecords)
                 .tap(
                   r =>
                     for {
@@ -49,11 +50,12 @@ object FlattenChunksTest
                       _ <- checkpoint(r, refProcessedCount, 500)
                     } yield ()
                 )
-                .take(nrRecords)
                 .runDrain
               count <- refProcessedCount.get
+              // need this when number of shards is high eg 32 and we use `take(N)` to prevent below error:
+              // Unexpected exception was thrown. This could probably be an issue or a bug. Please search for the exception/error online to check what is going on. If the issue persists or is a recurring problem, feel free to open an issue on, https://github.com/awslabs/amazon-kinesis-client.
               _ <- zio.clock.Clock.Live.clock
-                .sleep(10.seconds) // need this when number of shards is high eg 32 and we use `take(N)`
+                .sleep(10.seconds)
             } yield assert(count, equalTo(nrRecords))
           }
 

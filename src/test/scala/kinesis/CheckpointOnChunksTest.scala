@@ -40,7 +40,7 @@ object CheckpointOnChunksTest
                   applicationName = applicationName,
                   deserializer = TestMsgJsonSerde.jsonSerde
                 )
-              env <- TestUtils.clockWithBlockingM
+              env <- TestUtils.loggingWithClockWithBlockingM
               _ <- CheckpointOnChunkEndStreamClient
                 .consumeStream(refProcessedCount, runtime, stream)
                 .provide(env)

@@ -23,7 +23,7 @@ import zio.logging.{LogAnnotation, Logger, Logging}
 
 object TestUtils {
   val logFormat = "[correlation-id = %s] %s"
-  val clockWithBlockingM = for {
+  val loggingWithClockWithBlockingM = for {
     env <- ZIO.environment[Blocking]
     logging <- Slf4jLogger.make { (context, message) =>
       val correlationId = LogAnnotation.CorrelationId.render(
@@ -119,6 +119,7 @@ object TestUtils {
     }
   }
 
+  // simple checkpoint every batchSize scheme for flattenChunks approach
   def checkpoint[T](r: Record[T],
                     ref: Ref[Int],
                     batchSize: Int): ZIO[Clock with Blocking, Throwable, Unit] =

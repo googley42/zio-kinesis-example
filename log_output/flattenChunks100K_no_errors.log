@@ -1,0 +1,198 @@
+06:56:08.453 [zio-default-async-7-300227953] WARN  s.a.a.p.internal.ProfileFileReader - Ignoring profile 'profile-disney' on line 1 because it did not start with 'profile ' and it was not 'default'.
+06:56:08.676 [zio-default-async-7-300227953] WARN  s.a.a.p.internal.ProfileFileReader - Ignoring profile 'profile-disney' on line 1 because it did not start with 'profile ' and it was not 'default'.
+06:56:08.716 [zio-default-async-7-300227953] WARN  s.a.a.p.internal.ProfileFileReader - Ignoring profile 'profile-disney' on line 1 because it did not start with 'profile ' and it was not 'default'.
+06:56:10.363 [zio-default-async-11-300227953] WARN  s.a.a.p.internal.ProfileFileReader - Ignoring profile 'profile-disney' on line 1 because it did not start with 'profile ' and it was not 'default'.
+06:56:10.369 [zio-default-async-11-300227953] WARN  s.a.a.p.internal.ProfileFileReader - Ignoring profile 'profile-disney' on line 1 because it did not start with 'profile ' and it was not 'default'.
+06:56:10.383 [zio-default-async-11-300227953] WARN  s.a.a.p.internal.ProfileFileReader - Ignoring profile 'profile-disney' on line 1 because it did not start with 'profile ' and it was not 'default'.
+06:56:10.462 [zio-default-async-11-300227953] INFO  s.a.k.l.d.DynamoDBLeaseCoordinator - With failover time 10000 ms and epsilon 25 ms, LeaseCoordinator will renew leases every 3308 ms, takeleases every 20050 ms, process maximum of 2147483647 leases and steal 1 lease(s) at a time.
+06:56:10.507 [zio-default-blocking-1-1454383292] INFO  s.a.kinesis.coordinator.Scheduler - Initialization attempt 1
+06:56:10.507 [zio-default-blocking-1-1454383292] INFO  s.a.kinesis.coordinator.Scheduler - Initializing LeaseCoordinator
+06:56:11.394 [zio-default-blocking-1-1454383292] INFO  s.a.k.l.d.DynamoDBLeaseCoordinator - Created new lease table for coordinator with initial read capacity of 10 and write capacity of 10.
+06:56:21.613 [zio-default-blocking-1-1454383292] INFO  s.a.kinesis.coordinator.Scheduler - Syncing Kinesis shard info
+06:56:26.059 [zio-default-blocking-1-1454383292] INFO  s.a.kinesis.coordinator.Scheduler - Starting LeaseCoordinator
+06:56:26.286 [LeaseCoordinator-0000] INFO  s.a.k.l.dynamodb.DynamoDBLeaseTaker - Worker a420f038-3e1b-47e9-a2c0-f03b1fa2d484 saw 32 total leases, 32 available leases, 1 workers. Target is 32 leases, I have 0 leases, I will take 32 leases
+06:56:29.605 [LeaseCoordinator-0000] INFO  s.a.k.l.dynamodb.DynamoDBLeaseTaker - Worker a420f038-3e1b-47e9-a2c0-f03b1fa2d484 successfully took 32 leases: shardId-000000000019, shardId-000000000018, shardId-000000000017, shardId-000000000016, shardId-000000000015, shardId-000000000014, shardId-000000000013, shardId-000000000012, shardId-000000000011, shardId-000000000010, shardId-000000000031, shardId-000000000030, shardId-000000000009, shardId-000000000008, shardId-000000000007, shardId-000000000029, shardId-000000000028, shardId-000000000006, shardId-000000000027, shardId-000000000005, shardId-000000000026, shardId-000000000004, shardId-000000000003, shardId-000000000025, shardId-000000000002, shardId-000000000024, shardId-000000000023, shardId-000000000001, shardId-000000000022, shardId-000000000000, shardId-000000000021, shardId-000000000020
+06:56:36.176 [zio-default-blocking-1-1454383292] INFO  s.a.kinesis.coordinator.Scheduler - Initialization complete. Starting worker loop.
+06:56:36.249 [zio-default-blocking-1-1454383292] INFO  s.a.kinesis.coordinator.Scheduler - Created new shardConsumer for : ShardInfo(shardId=shardId-000000000019, concurrencyToken=ff2a7073-eaef-4747-866e-d95c7b90327c, parentShardIds=[], checkpoint={SequenceNumber: TRIM_HORIZON,SubsequenceNumber: 0})
+06:56:36.249 [zio-default-blocking-1-1454383292] INFO  s.a.kinesis.coordinator.Scheduler - Created new shardConsumer for : ShardInfo(shardId=shardId-000000000018, concurrencyToken=e6ea0f04-ded2-433b-9813-97c72c3897d2, parentShardIds=[], checkpoint={SequenceNumber: TRIM_HORIZON,SubsequenceNumber: 0})
+06:56:36.250 [zio-default-blocking-1-1454383292] INFO  s.a.kinesis.coordinator.Scheduler - Created new shardConsumer for : ShardInfo(shardId=shardId-000000000017, concurrencyToken=5bb91292-baec-4ba2-bff2-af288e7caaab, parentShardIds=[], checkpoint={SequenceNumber: TRIM_HORIZON,SubsequenceNumber: 0})
+06:56:36.250 [zio-default-blocking-1-1454383292] INFO  s.a.kinesis.coordinator.Scheduler - Created new shardConsumer for : ShardInfo(shardId=shardId-000000000016, concurrencyToken=cb0727d5-ab8d-4f90-8caf-0f39f5696104, parentShardIds=[], checkpoint={SequenceNumber: TRIM_HORIZON,SubsequenceNumber: 0})
+06:56:36.251 [zio-default-blocking-1-1454383292] INFO  s.a.kinesis.coordinator.Scheduler - Created new shardConsumer for : ShardInfo(shardId=shardId-000000000015, concurrencyToken=99f2d018-8904-4e90-852f-4c157bb7deca, parentShardIds=[], checkpoint={SequenceNumber: TRIM_HORIZON,SubsequenceNumber: 0})
+06:56:36.252 [zio-default-blocking-1-1454383292] INFO  s.a.kinesis.coordinator.Scheduler - Created new shardConsumer for : ShardInfo(shardId=shardId-000000000014, concurrencyToken=0732da6b-b96f-4450-9e6e-442fcd1d749a, parentShardIds=[], checkpoint={SequenceNumber: TRIM_HORIZON,SubsequenceNumber: 0})
+06:56:36.252 [ShardRecordProcessor-0000] INFO  s.a.k.l.BlockOnParentShardTask - No need to block on parents [] of shard shardId-000000000019
+06:56:36.252 [zio-default-blocking-1-1454383292] INFO  s.a.kinesis.coordinator.Scheduler - Created new shardConsumer for : ShardInfo(shardId=shardId-000000000013, concurrencyToken=f33db2d1-6d9b-45f5-8b5d-bebc72ea2696, parentShardIds=[], checkpoint={SequenceNumber: TRIM_HORIZON,SubsequenceNumber: 0})
+06:56:36.252 [ShardRecordProcessor-0005] INFO  s.a.k.l.BlockOnParentShardTask - No need to block on parents [] of shard shardId-000000000014
+06:56:36.252 [ShardRecordProcessor-0002] INFO  s.a.k.l.BlockOnParentShardTask - No need to block on parents [] of shard shardId-000000000017
+06:56:36.252 [ShardRecordProcessor-0001] INFO  s.a.k.l.BlockOnParentShardTask - No need to block on parents [] of shard shardId-000000000018
+06:56:36.252 [ShardRecordProcessor-0004] INFO  s.a.k.l.BlockOnParentShardTask - No need to block on parents [] of shard shardId-000000000015
+06:56:36.253 [zio-default-blocking-1-1454383292] INFO  s.a.kinesis.coordinator.Scheduler - Created new shardConsumer for : ShardInfo(shardId=shardId-000000000012, concurrencyToken=22bda0ed-3239-4c76-919e-41e59f49b678, parentShardIds=[], checkpoint={SequenceNumber: TRIM_HORIZON,SubsequenceNumber: 0})
+06:56:36.253 [ShardRecordProcessor-0003] INFO  s.a.k.l.BlockOnParentShardTask - No need to block on parents [] of shard shardId-000000000016
+06:56:36.253 [ShardRecordProcessor-0006] INFO  s.a.k.l.BlockOnParentShardTask - No need to block on parents [] of shard shardId-000000000013
+06:56:36.253 [zio-default-blocking-1-1454383292] INFO  s.a.kinesis.coordinator.Scheduler - Created new shardConsumer for : ShardInfo(shardId=shardId-000000000011, concurrencyToken=71d0b946-4111-4a29-bd62-6d05c6198389, parentShardIds=[], checkpoint={SequenceNumber: TRIM_HORIZON,SubsequenceNumber: 0})
+06:56:36.254 [ShardRecordProcessor-0001] INFO  s.a.k.l.BlockOnParentShardTask - No need to block on parents [] of shard shardId-000000000011
+06:56:36.253 [ShardRecordProcessor-0007] INFO  s.a.k.l.BlockOnParentShardTask - No need to block on parents [] of shard shardId-000000000012
+06:56:36.254 [zio-default-blocking-1-1454383292] INFO  s.a.kinesis.coordinator.Scheduler - Created new shardConsumer for : ShardInfo(shardId=shardId-000000000010, concurrencyToken=1806e0c2-f094-42cf-98be-930cb3262f04, parentShardIds=[], checkpoint={SequenceNumber: TRIM_HORIZON,SubsequenceNumber: 0})
+06:56:36.254 [ShardRecordProcessor-0007] INFO  s.a.k.l.BlockOnParentShardTask - No need to block on parents [] of shard shardId-000000000010
+06:56:36.254 [zio-default-blocking-1-1454383292] INFO  s.a.kinesis.coordinator.Scheduler - Created new shardConsumer for : ShardInfo(shardId=shardId-000000000031, concurrencyToken=82c9c039-17f1-452d-96b9-eafe2a135349, parentShardIds=[], checkpoint={SequenceNumber: TRIM_HORIZON,SubsequenceNumber: 0})
+06:56:36.254 [ShardRecordProcessor-0007] INFO  s.a.k.l.BlockOnParentShardTask - No need to block on parents [] of shard shardId-000000000031
+06:56:36.254 [zio-default-blocking-1-1454383292] INFO  s.a.kinesis.coordinator.Scheduler - Created new shardConsumer for : ShardInfo(shardId=shardId-000000000030, concurrencyToken=97f0173e-8269-4e2c-8a35-2f247b68f0fc, parentShardIds=[], checkpoint={SequenceNumber: TRIM_HORIZON,SubsequenceNumber: 0})
+06:56:36.255 [zio-default-blocking-1-1454383292] INFO  s.a.kinesis.coordinator.Scheduler - Created new shardConsumer for : ShardInfo(shardId=shardId-000000000009, concurrencyToken=bc790dbd-21bf-45de-adb6-1f11e425d5d9, parentShardIds=[], checkpoint={SequenceNumber: TRIM_HORIZON,SubsequenceNumber: 0})
+06:56:36.255 [ShardRecordProcessor-0007] INFO  s.a.k.l.BlockOnParentShardTask - No need to block on parents [] of shard shardId-000000000030
+06:56:36.255 [ShardRecordProcessor-0001] INFO  s.a.k.l.BlockOnParentShardTask - No need to block on parents [] of shard shardId-000000000009
+06:56:36.255 [zio-default-blocking-1-1454383292] INFO  s.a.kinesis.coordinator.Scheduler - Created new shardConsumer for : ShardInfo(shardId=shardId-000000000008, concurrencyToken=06aea324-a6a6-4ad8-9824-6c4bdb16c60b, parentShardIds=[], checkpoint={SequenceNumber: TRIM_HORIZON,SubsequenceNumber: 0})
+06:56:36.255 [ShardRecordProcessor-0001] INFO  s.a.k.l.BlockOnParentShardTask - No need to block on parents [] of shard shardId-000000000008
+06:56:36.255 [zio-default-blocking-1-1454383292] INFO  s.a.kinesis.coordinator.Scheduler - Created new shardConsumer for : ShardInfo(shardId=shardId-000000000007, concurrencyToken=b43076e5-7faf-4b8e-bea0-700a4b36fbb3, parentShardIds=[], checkpoint={SequenceNumber: TRIM_HORIZON,SubsequenceNumber: 0})
+06:56:36.255 [ShardRecordProcessor-0001] INFO  s.a.k.l.BlockOnParentShardTask - No need to block on parents [] of shard shardId-000000000007
+06:56:36.255 [zio-default-blocking-1-1454383292] INFO  s.a.kinesis.coordinator.Scheduler - Created new shardConsumer for : ShardInfo(shardId=shardId-000000000029, concurrencyToken=b282e1b2-7ec7-476b-bf94-13711e0eb225, parentShardIds=[], checkpoint={SequenceNumber: TRIM_HORIZON,SubsequenceNumber: 0})
+06:56:36.256 [ShardRecordProcessor-0001] INFO  s.a.k.l.BlockOnParentShardTask - No need to block on parents [] of shard shardId-000000000029
+06:56:36.256 [zio-default-blocking-1-1454383292] INFO  s.a.kinesis.coordinator.Scheduler - Created new shardConsumer for : ShardInfo(shardId=shardId-000000000006, concurrencyToken=6e4c3733-dce0-479c-9c1b-3191a79b181e, parentShardIds=[], checkpoint={SequenceNumber: TRIM_HORIZON,SubsequenceNumber: 0})
+06:56:36.256 [ShardRecordProcessor-0001] INFO  s.a.k.l.BlockOnParentShardTask - No need to block on parents [] of shard shardId-000000000006
+06:56:36.256 [zio-default-blocking-1-1454383292] INFO  s.a.kinesis.coordinator.Scheduler - Created new shardConsumer for : ShardInfo(shardId=shardId-000000000028, concurrencyToken=e1f9d87b-266f-4e1b-a20e-4a8e50c1ca33, parentShardIds=[], checkpoint={SequenceNumber: TRIM_HORIZON,SubsequenceNumber: 0})
+06:56:36.256 [ShardRecordProcessor-0001] INFO  s.a.k.l.BlockOnParentShardTask - No need to block on parents [] of shard shardId-000000000028
+06:56:36.256 [zio-default-blocking-1-1454383292] INFO  s.a.kinesis.coordinator.Scheduler - Created new shardConsumer for : ShardInfo(shardId=shardId-000000000005, concurrencyToken=5b0eb772-d54c-4b48-b335-da1ceb05a40c, parentShardIds=[], checkpoint={SequenceNumber: TRIM_HORIZON,SubsequenceNumber: 0})
+06:56:36.257 [zio-default-blocking-1-1454383292] INFO  s.a.kinesis.coordinator.Scheduler - Created new shardConsumer for : ShardInfo(shardId=shardId-000000000027, concurrencyToken=69a3660f-7102-475b-af55-ce7b7579ddb1, parentShardIds=[], checkpoint={SequenceNumber: TRIM_HORIZON,SubsequenceNumber: 0})
+06:56:36.257 [ShardRecordProcessor-0001] INFO  s.a.k.l.BlockOnParentShardTask - No need to block on parents [] of shard shardId-000000000005
+06:56:36.257 [zio-default-blocking-1-1454383292] INFO  s.a.kinesis.coordinator.Scheduler - Created new shardConsumer for : ShardInfo(shardId=shardId-000000000004, concurrencyToken=89286919-871b-469c-9d4a-f388ab79fe0d, parentShardIds=[], checkpoint={SequenceNumber: TRIM_HORIZON,SubsequenceNumber: 0})
+06:56:36.257 [ShardRecordProcessor-0007] INFO  s.a.k.l.BlockOnParentShardTask - No need to block on parents [] of shard shardId-000000000027
+06:56:36.257 [ShardRecordProcessor-0001] INFO  s.a.k.l.BlockOnParentShardTask - No need to block on parents [] of shard shardId-000000000004
+06:56:36.257 [zio-default-blocking-1-1454383292] INFO  s.a.kinesis.coordinator.Scheduler - Created new shardConsumer for : ShardInfo(shardId=shardId-000000000026, concurrencyToken=7750e8ab-ec7a-4b94-b778-c3aa5a6eca5d, parentShardIds=[], checkpoint={SequenceNumber: TRIM_HORIZON,SubsequenceNumber: 0})
+06:56:36.258 [zio-default-blocking-1-1454383292] INFO  s.a.kinesis.coordinator.Scheduler - Created new shardConsumer for : ShardInfo(shardId=shardId-000000000003, concurrencyToken=caa07bca-4cc0-485e-b2ef-d5fa8bf7d8f6, parentShardIds=[], checkpoint={SequenceNumber: TRIM_HORIZON,SubsequenceNumber: 0})
+06:56:36.258 [ShardRecordProcessor-0001] INFO  s.a.k.l.BlockOnParentShardTask - No need to block on parents [] of shard shardId-000000000026
+06:56:36.258 [ShardRecordProcessor-0007] INFO  s.a.k.l.BlockOnParentShardTask - No need to block on parents [] of shard shardId-000000000003
+06:56:36.258 [zio-default-blocking-1-1454383292] INFO  s.a.kinesis.coordinator.Scheduler - Created new shardConsumer for : ShardInfo(shardId=shardId-000000000025, concurrencyToken=b0d4cd63-be22-4889-9d52-58e3b3126fbb, parentShardIds=[], checkpoint={SequenceNumber: TRIM_HORIZON,SubsequenceNumber: 0})
+06:56:36.258 [ShardRecordProcessor-0007] INFO  s.a.k.l.BlockOnParentShardTask - No need to block on parents [] of shard shardId-000000000025
+06:56:36.258 [zio-default-blocking-1-1454383292] INFO  s.a.kinesis.coordinator.Scheduler - Created new shardConsumer for : ShardInfo(shardId=shardId-000000000002, concurrencyToken=f965e612-290a-4766-b0d8-c2fce263aaa0, parentShardIds=[], checkpoint={SequenceNumber: TRIM_HORIZON,SubsequenceNumber: 0})
+06:56:36.258 [ShardRecordProcessor-0007] INFO  s.a.k.l.BlockOnParentShardTask - No need to block on parents [] of shard shardId-000000000002
+06:56:36.259 [zio-default-blocking-1-1454383292] INFO  s.a.kinesis.coordinator.Scheduler - Created new shardConsumer for : ShardInfo(shardId=shardId-000000000024, concurrencyToken=fad61650-2961-449f-b840-f77d9f73f1cb, parentShardIds=[], checkpoint={SequenceNumber: TRIM_HORIZON,SubsequenceNumber: 0})
+06:56:36.259 [ShardRecordProcessor-0007] INFO  s.a.k.l.BlockOnParentShardTask - No need to block on parents [] of shard shardId-000000000024
+06:56:36.259 [zio-default-blocking-1-1454383292] INFO  s.a.kinesis.coordinator.Scheduler - Created new shardConsumer for : ShardInfo(shardId=shardId-000000000001, concurrencyToken=d32fe42f-ad65-4f43-b609-6c71ba609af7, parentShardIds=[], checkpoint={SequenceNumber: TRIM_HORIZON,SubsequenceNumber: 0})
+06:56:36.259 [ShardRecordProcessor-0007] INFO  s.a.k.l.BlockOnParentShardTask - No need to block on parents [] of shard shardId-000000000001
+06:56:36.259 [zio-default-blocking-1-1454383292] INFO  s.a.kinesis.coordinator.Scheduler - Created new shardConsumer for : ShardInfo(shardId=shardId-000000000023, concurrencyToken=3cd251de-9f38-486e-91d8-7055c3e42ff7, parentShardIds=[], checkpoint={SequenceNumber: TRIM_HORIZON,SubsequenceNumber: 0})
+06:56:36.259 [zio-default-blocking-1-1454383292] INFO  s.a.kinesis.coordinator.Scheduler - Created new shardConsumer for : ShardInfo(shardId=shardId-000000000000, concurrencyToken=7627b4e4-1637-494a-9823-038acebb957b, parentShardIds=[], checkpoint={SequenceNumber: TRIM_HORIZON,SubsequenceNumber: 0})
+06:56:36.259 [ShardRecordProcessor-0001] INFO  s.a.k.l.BlockOnParentShardTask - No need to block on parents [] of shard shardId-000000000000
+06:56:36.260 [ShardRecordProcessor-0007] INFO  s.a.k.l.BlockOnParentShardTask - No need to block on parents [] of shard shardId-000000000023
+06:56:36.260 [zio-default-blocking-1-1454383292] INFO  s.a.kinesis.coordinator.Scheduler - Created new shardConsumer for : ShardInfo(shardId=shardId-000000000022, concurrencyToken=9afa2ab4-b4f9-4772-881c-c3d72afb103c, parentShardIds=[], checkpoint={SequenceNumber: TRIM_HORIZON,SubsequenceNumber: 0})
+06:56:36.260 [ShardRecordProcessor-0007] INFO  s.a.k.l.BlockOnParentShardTask - No need to block on parents [] of shard shardId-000000000022
+06:56:36.260 [zio-default-blocking-1-1454383292] INFO  s.a.kinesis.coordinator.Scheduler - Created new shardConsumer for : ShardInfo(shardId=shardId-000000000021, concurrencyToken=1ce60bcf-c831-469b-9a11-83baf79e00ca, parentShardIds=[], checkpoint={SequenceNumber: TRIM_HORIZON,SubsequenceNumber: 0})
+06:56:36.260 [ShardRecordProcessor-0007] INFO  s.a.k.l.BlockOnParentShardTask - No need to block on parents [] of shard shardId-000000000021
+06:56:36.261 [zio-default-blocking-1-1454383292] INFO  s.a.kinesis.coordinator.Scheduler - Created new shardConsumer for : ShardInfo(shardId=shardId-000000000020, concurrencyToken=74c7f768-0079-4b69-9c03-a2d081fae0eb, parentShardIds=[], checkpoint={SequenceNumber: TRIM_HORIZON,SubsequenceNumber: 0})
+06:56:36.261 [ShardRecordProcessor-0007] INFO  s.a.k.l.BlockOnParentShardTask - No need to block on parents [] of shard shardId-000000000020
+06:56:37.485 [ShardRecordProcessor-0027] INFO  s.a.k.r.polling.KinesisDataFetcher - Initializing shard shardId-000000000023 with TRIM_HORIZON
+06:56:37.485 [ShardRecordProcessor-0010] INFO  s.a.k.r.polling.KinesisDataFetcher - Initializing shard shardId-000000000031 with TRIM_HORIZON
+06:56:37.485 [ShardRecordProcessor-0014] INFO  s.a.k.r.polling.KinesisDataFetcher - Initializing shard shardId-000000000007 with TRIM_HORIZON
+06:56:37.486 [ShardRecordProcessor-0018] INFO  s.a.k.r.polling.KinesisDataFetcher - Initializing shard shardId-000000000005 with TRIM_HORIZON
+06:56:37.486 [ShardRecordProcessor-0004] INFO  s.a.k.r.polling.KinesisDataFetcher - Initializing shard shardId-000000000014 with TRIM_HORIZON
+06:56:37.486 [ShardRecordProcessor-0017] INFO  s.a.k.r.polling.KinesisDataFetcher - Initializing shard shardId-000000000028 with TRIM_HORIZON
+06:56:37.613 [ShardRecordProcessor-0018] INFO  s.a.k.r.p.PrefetchRecordsPublisher - shardId-000000000005 : Starting prefetching thread.
+06:56:37.613 [ShardRecordProcessor-0010] INFO  s.a.k.r.p.PrefetchRecordsPublisher - shardId-000000000031 : Starting prefetching thread.
+06:56:37.614 [ShardRecordProcessor-0004] INFO  s.a.k.r.p.PrefetchRecordsPublisher - shardId-000000000014 : Starting prefetching thread.
+06:56:37.616 [ShardRecordProcessor-0027] INFO  s.a.k.r.p.PrefetchRecordsPublisher - shardId-000000000023 : Starting prefetching thread.
+06:56:37.637 [ShardRecordProcessor-0005] INFO  s.a.k.r.polling.KinesisDataFetcher - Initializing shard shardId-000000000012 with TRIM_HORIZON
+06:56:37.664 [ShardRecordProcessor-0001] INFO  s.a.k.r.polling.KinesisDataFetcher - Initializing shard shardId-000000000018 with TRIM_HORIZON
+06:56:37.665 [ShardRecordProcessor-0031] INFO  s.a.k.r.polling.KinesisDataFetcher - Initializing shard shardId-000000000020 with TRIM_HORIZON
+06:56:37.665 [ShardRecordProcessor-0009] INFO  s.a.k.r.polling.KinesisDataFetcher - Initializing shard shardId-000000000010 with TRIM_HORIZON
+06:56:37.671 [ShardRecordProcessor-0020] INFO  s.a.k.r.polling.KinesisDataFetcher - Initializing shard shardId-000000000004 with TRIM_HORIZON
+06:56:37.673 [ShardRecordProcessor-0016] INFO  s.a.k.r.polling.KinesisDataFetcher - Initializing shard shardId-000000000006 with TRIM_HORIZON
+06:56:37.673 [ShardRecordProcessor-0015] INFO  s.a.k.r.polling.KinesisDataFetcher - Initializing shard shardId-000000000029 with TRIM_HORIZON
+06:56:37.676 [ShardRecordProcessor-0024] INFO  s.a.k.r.polling.KinesisDataFetcher - Initializing shard shardId-000000000002 with TRIM_HORIZON
+06:56:37.676 [ShardRecordProcessor-0019] INFO  s.a.k.r.polling.KinesisDataFetcher - Initializing shard shardId-000000000027 with TRIM_HORIZON
+06:56:37.683 [ShardRecordProcessor-0000] INFO  s.a.k.r.polling.KinesisDataFetcher - Initializing shard shardId-000000000016 with TRIM_HORIZON
+06:56:37.684 [ShardRecordProcessor-0030] INFO  s.a.k.r.polling.KinesisDataFetcher - Initializing shard shardId-000000000021 with TRIM_HORIZON
+06:56:37.685 [ShardRecordProcessor-0007] INFO  s.a.k.r.polling.KinesisDataFetcher - Initializing shard shardId-000000000019 with TRIM_HORIZON
+06:56:37.689 [ShardRecordProcessor-0028] INFO  s.a.k.r.polling.KinesisDataFetcher - Initializing shard shardId-000000000000 with TRIM_HORIZON
+06:56:37.691 [ShardRecordProcessor-0012] INFO  s.a.k.r.polling.KinesisDataFetcher - Initializing shard shardId-000000000009 with TRIM_HORIZON
+06:56:37.695 [ShardRecordProcessor-0006] INFO  s.a.k.r.polling.KinesisDataFetcher - Initializing shard shardId-000000000017 with TRIM_HORIZON
+06:56:37.698 [ShardRecordProcessor-0008] INFO  s.a.k.r.polling.KinesisDataFetcher - Initializing shard shardId-000000000011 with TRIM_HORIZON
+06:56:37.698 [ShardRecordProcessor-0011] INFO  s.a.k.r.polling.KinesisDataFetcher - Initializing shard shardId-000000000030 with TRIM_HORIZON
+06:56:37.698 [ShardRecordProcessor-0013] INFO  s.a.k.r.polling.KinesisDataFetcher - Initializing shard shardId-000000000008 with TRIM_HORIZON
+06:56:37.699 [ShardRecordProcessor-0021] INFO  s.a.k.r.polling.KinesisDataFetcher - Initializing shard shardId-000000000026 with TRIM_HORIZON
+06:56:37.700 [ShardRecordProcessor-0003] INFO  s.a.k.r.polling.KinesisDataFetcher - Initializing shard shardId-000000000015 with TRIM_HORIZON
+06:56:37.703 [ShardRecordProcessor-0022] INFO  s.a.k.r.polling.KinesisDataFetcher - Initializing shard shardId-000000000003 with TRIM_HORIZON
+06:56:37.703 [ShardRecordProcessor-0017] INFO  s.a.k.r.p.PrefetchRecordsPublisher - shardId-000000000028 : Starting prefetching thread.
+06:56:37.704 [ShardRecordProcessor-0014] INFO  s.a.k.r.p.PrefetchRecordsPublisher - shardId-000000000007 : Starting prefetching thread.
+06:56:37.707 [ShardRecordProcessor-0025] INFO  s.a.k.r.polling.KinesisDataFetcher - Initializing shard shardId-000000000024 with TRIM_HORIZON
+06:56:37.708 [ShardRecordProcessor-0029] INFO  s.a.k.r.polling.KinesisDataFetcher - Initializing shard shardId-000000000022 with TRIM_HORIZON
+06:56:37.713 [ShardRecordProcessor-0002] INFO  s.a.k.r.polling.KinesisDataFetcher - Initializing shard shardId-000000000013 with TRIM_HORIZON
+06:56:37.713 [ShardRecordProcessor-0023] INFO  s.a.k.r.polling.KinesisDataFetcher - Initializing shard shardId-000000000025 with TRIM_HORIZON
+06:56:37.718 [ShardRecordProcessor-0026] INFO  s.a.k.r.polling.KinesisDataFetcher - Initializing shard shardId-000000000001 with TRIM_HORIZON
+06:56:37.856 [ShardRecordProcessor-0005] INFO  s.a.k.r.p.PrefetchRecordsPublisher - shardId-000000000012 : Starting prefetching thread.
+06:56:37.860 [ShardRecordProcessor-0001] INFO  s.a.k.r.p.PrefetchRecordsPublisher - shardId-000000000018 : Starting prefetching thread.
+06:56:37.860 [ShardRecordProcessor-0031] INFO  s.a.k.r.p.PrefetchRecordsPublisher - shardId-000000000020 : Starting prefetching thread.
+06:56:37.863 [ShardRecordProcessor-0009] INFO  s.a.k.r.p.PrefetchRecordsPublisher - shardId-000000000010 : Starting prefetching thread.
+06:56:37.951 [ShardRecordProcessor-0022] INFO  s.a.k.r.p.PrefetchRecordsPublisher - shardId-000000000003 : Starting prefetching thread.
+06:56:38.193 [ShardRecordProcessor-0015] INFO  s.a.k.r.p.PrefetchRecordsPublisher - shardId-000000000029 : Starting prefetching thread.
+06:56:38.195 [ShardRecordProcessor-0020] INFO  s.a.k.r.p.PrefetchRecordsPublisher - shardId-000000000004 : Starting prefetching thread.
+06:56:38.197 [ShardRecordProcessor-0016] INFO  s.a.k.r.p.PrefetchRecordsPublisher - shardId-000000000006 : Starting prefetching thread.
+06:56:38.206 [ShardRecordProcessor-0007] INFO  s.a.k.r.p.PrefetchRecordsPublisher - shardId-000000000019 : Starting prefetching thread.
+06:56:38.211 [ShardRecordProcessor-0030] INFO  s.a.k.r.p.PrefetchRecordsPublisher - shardId-000000000021 : Starting prefetching thread.
+06:56:38.214 [ShardRecordProcessor-0028] INFO  s.a.k.r.p.PrefetchRecordsPublisher - shardId-000000000000 : Starting prefetching thread.
+06:56:38.217 [ShardRecordProcessor-0011] INFO  s.a.k.r.p.PrefetchRecordsPublisher - shardId-000000000030 : Starting prefetching thread.
+06:56:38.234 [ShardRecordProcessor-0003] INFO  s.a.k.r.p.PrefetchRecordsPublisher - shardId-000000000015 : Starting prefetching thread.
+06:56:38.235 [ShardRecordProcessor-0008] INFO  s.a.k.r.p.PrefetchRecordsPublisher - shardId-000000000011 : Starting prefetching thread.
+06:56:38.235 [ShardRecordProcessor-0006] INFO  s.a.k.r.p.PrefetchRecordsPublisher - shardId-000000000017 : Starting prefetching thread.
+06:56:38.235 [ShardRecordProcessor-0013] INFO  s.a.k.r.p.PrefetchRecordsPublisher - shardId-000000000008 : Starting prefetching thread.
+06:56:38.242 [ShardRecordProcessor-0029] INFO  s.a.k.r.p.PrefetchRecordsPublisher - shardId-000000000022 : Starting prefetching thread.
+06:56:38.245 [ShardRecordProcessor-0021] INFO  s.a.k.r.p.PrefetchRecordsPublisher - shardId-000000000026 : Starting prefetching thread.
+06:56:38.256 [ShardRecordProcessor-0002] INFO  s.a.k.r.p.PrefetchRecordsPublisher - shardId-000000000013 : Starting prefetching thread.
+06:56:38.256 [ShardRecordProcessor-0026] INFO  s.a.k.r.p.PrefetchRecordsPublisher - shardId-000000000001 : Starting prefetching thread.
+06:56:38.256 [ShardRecordProcessor-0025] INFO  s.a.k.r.p.PrefetchRecordsPublisher - shardId-000000000024 : Starting prefetching thread.
+06:56:38.256 [ShardRecordProcessor-0023] INFO  s.a.k.r.p.PrefetchRecordsPublisher - shardId-000000000025 : Starting prefetching thread.
+06:56:38.286 [ShardRecordProcessor-0024] INFO  s.a.k.r.p.PrefetchRecordsPublisher - shardId-000000000002 : Starting prefetching thread.
+06:56:38.288 [ShardRecordProcessor-0019] INFO  s.a.k.r.p.PrefetchRecordsPublisher - shardId-000000000027 : Starting prefetching thread.
+06:56:38.300 [ShardRecordProcessor-0012] INFO  s.a.k.r.p.PrefetchRecordsPublisher - shardId-000000000009 : Starting prefetching thread.
+06:56:38.301 [ShardRecordProcessor-0000] INFO  s.a.k.r.p.PrefetchRecordsPublisher - shardId-000000000016 : Starting prefetching thread.
+06:56:40.588 [zio-default-blocking-1-1454383292] INFO  s.a.k.c.DiagnosticEventLogger - Current thread pool executor state: ExecutorStateEvent(executorName=SchedulerThreadPoolExecutor, currentQueueSize=0, activeThreads=0, coreThreads=0, leasesOwned=32, largestPoolSize=33, maximumPoolSize=2147483647)
+06:57:11.094 [zio-default-blocking-1-1454383292] INFO  s.a.kinesis.coordinator.Scheduler - Current stream shard assignments: shardId-000000000019, shardId-000000000018, shardId-000000000017, shardId-000000000016, shardId-000000000015, shardId-000000000014, shardId-000000000013, shardId-000000000012, shardId-000000000011, shardId-000000000010, shardId-000000000031, shardId-000000000030, shardId-000000000009, shardId-000000000008, shardId-000000000007, shardId-000000000029, shardId-000000000006, shardId-000000000028, shardId-000000000005, shardId-000000000027, shardId-000000000004, shardId-000000000026, shardId-000000000003, shardId-000000000025, shardId-000000000002, shardId-000000000024, shardId-000000000001, shardId-000000000023, shardId-000000000000, shardId-000000000022, shardId-000000000021, shardId-000000000020
+06:57:11.094 [zio-default-blocking-1-1454383292] INFO  s.a.k.c.DiagnosticEventLogger - Current thread pool executor state: ExecutorStateEvent(executorName=SchedulerThreadPoolExecutor, currentQueueSize=0, activeThreads=0, coreThreads=0, leasesOwned=32, largestPoolSize=33, maximumPoolSize=2147483647)
+06:57:11.094 [zio-default-blocking-1-1454383292] INFO  s.a.kinesis.coordinator.Scheduler - Sleeping ...
+06:57:41.655 [zio-default-blocking-1-1454383292] INFO  s.a.k.c.DiagnosticEventLogger - Current thread pool executor state: ExecutorStateEvent(executorName=SchedulerThreadPoolExecutor, currentQueueSize=0, activeThreads=0, coreThreads=0, leasesOwned=32, largestPoolSize=33, maximumPoolSize=2147483647)
+06:58:12.665 [zio-default-blocking-1-1454383292] INFO  s.a.kinesis.coordinator.Scheduler - Current stream shard assignments: shardId-000000000019, shardId-000000000018, shardId-000000000017, shardId-000000000016, shardId-000000000015, shardId-000000000014, shardId-000000000013, shardId-000000000012, shardId-000000000011, shardId-000000000010, shardId-000000000031, shardId-000000000030, shardId-000000000009, shardId-000000000008, shardId-000000000007, shardId-000000000029, shardId-000000000006, shardId-000000000028, shardId-000000000005, shardId-000000000027, shardId-000000000004, shardId-000000000026, shardId-000000000003, shardId-000000000025, shardId-000000000002, shardId-000000000024, shardId-000000000001, shardId-000000000023, shardId-000000000000, shardId-000000000022, shardId-000000000021, shardId-000000000020
+06:58:12.761 [zio-default-blocking-1-1454383292] INFO  s.a.k.c.DiagnosticEventLogger - Current thread pool executor state: ExecutorStateEvent(executorName=SchedulerThreadPoolExecutor, currentQueueSize=0, activeThreads=0, coreThreads=0, leasesOwned=32, largestPoolSize=33, maximumPoolSize=2147483647)
+06:58:12.761 [zio-default-blocking-1-1454383292] INFO  s.a.kinesis.coordinator.Scheduler - Sleeping ...
+06:58:43.307 [zio-default-blocking-1-1454383292] INFO  s.a.k.c.DiagnosticEventLogger - Current thread pool executor state: ExecutorStateEvent(executorName=SchedulerThreadPoolExecutor, currentQueueSize=0, activeThreads=0, coreThreads=0, leasesOwned=32, largestPoolSize=33, maximumPoolSize=2147483647)
+06:59:14.135 [zio-default-blocking-1-1454383292] INFO  s.a.kinesis.coordinator.Scheduler - Current stream shard assignments: shardId-000000000019, shardId-000000000018, shardId-000000000017, shardId-000000000016, shardId-000000000015, shardId-000000000014, shardId-000000000013, shardId-000000000012, shardId-000000000011, shardId-000000000010, shardId-000000000031, shardId-000000000030, shardId-000000000009, shardId-000000000008, shardId-000000000007, shardId-000000000029, shardId-000000000006, shardId-000000000028, shardId-000000000005, shardId-000000000027, shardId-000000000004, shardId-000000000026, shardId-000000000003, shardId-000000000025, shardId-000000000002, shardId-000000000024, shardId-000000000001, shardId-000000000023, shardId-000000000000, shardId-000000000022, shardId-000000000021, shardId-000000000020
+06:59:14.135 [zio-default-blocking-1-1454383292] INFO  s.a.k.c.DiagnosticEventLogger - Current thread pool executor state: ExecutorStateEvent(executorName=SchedulerThreadPoolExecutor, currentQueueSize=0, activeThreads=0, coreThreads=0, leasesOwned=32, largestPoolSize=33, maximumPoolSize=2147483647)
+06:59:14.135 [zio-default-blocking-1-1454383292] INFO  s.a.kinesis.coordinator.Scheduler - Sleeping ...
+06:59:39.515 [RequestedShutdownThread] INFO  s.a.kinesis.coordinator.Scheduler - Worker shutdown requested.
+06:59:39.516 [RequestedShutdownThread] INFO  s.a.k.l.d.DynamoDBLeaseCoordinator - Worker a420f038-3e1b-47e9-a2c0-f03b1fa2d484 has successfully stopped lease-tracking threads
+06:59:40.514 [prefetch-cache-shardId-000000000002-0000] INFO  s.a.k.r.p.PrefetchRecordsPublisher - shardId-000000000002 :  Thread was interrupted, indicating shutdown was called on the cache.
+06:59:40.514 [prefetch-cache-shardId-000000000003-0000] INFO  s.a.k.r.p.PrefetchRecordsPublisher - shardId-000000000003 :  Thread was interrupted, indicating shutdown was called on the cache.
+06:59:40.515 [prefetch-cache-shardId-000000000015-0000] INFO  s.a.k.r.p.PrefetchRecordsPublisher - shardId-000000000015 :  Thread was interrupted, indicating shutdown was called on the cache.
+06:59:40.515 [prefetch-cache-shardId-000000000023-0000] INFO  s.a.k.r.p.PrefetchRecordsPublisher - shardId-000000000023 :  Thread was interrupted, indicating shutdown was called on the cache.
+06:59:40.515 [prefetch-cache-shardId-000000000019-0000] INFO  s.a.k.r.p.PrefetchRecordsPublisher - shardId-000000000019 :  Thread was interrupted, indicating shutdown was called on the cache.
+06:59:40.515 [prefetch-cache-shardId-000000000008-0000] INFO  s.a.k.r.p.PrefetchRecordsPublisher - shardId-000000000008 :  Thread was interrupted, indicating shutdown was called on the cache.
+06:59:40.516 [prefetch-cache-shardId-000000000012-0000] INFO  s.a.k.r.p.PrefetchRecordsPublisher - shardId-000000000012 :  Thread was interrupted, indicating shutdown was called on the cache.
+06:59:40.516 [prefetch-cache-shardId-000000000021-0000] INFO  s.a.k.r.p.PrefetchRecordsPublisher - shardId-000000000021 :  Thread was interrupted, indicating shutdown was called on the cache.
+06:59:40.516 [RequestedShutdownThread] INFO  s.a.k.c.GracefulShutdownCoordinator$GracefulShutdownCallable - Waiting for 32 record processors to complete final shutdown
+06:59:40.517 [prefetch-cache-shardId-000000000018-0000] INFO  s.a.k.r.p.PrefetchRecordsPublisher - shardId-000000000018 :  Thread was interrupted, indicating shutdown was called on the cache.
+06:59:40.517 [prefetch-cache-shardId-000000000005-0000] INFO  s.a.k.r.p.PrefetchRecordsPublisher - shardId-000000000005 :  Thread was interrupted, indicating shutdown was called on the cache.
+06:59:40.517 [prefetch-cache-shardId-000000000004-0000] INFO  s.a.k.r.p.PrefetchRecordsPublisher - shardId-000000000004 :  Thread was interrupted, indicating shutdown was called on the cache.
+06:59:40.516 [prefetch-cache-shardId-000000000013-0000] INFO  s.a.k.r.p.PrefetchRecordsPublisher - shardId-000000000013 :  Thread was interrupted, indicating shutdown was called on the cache.
+06:59:40.517 [prefetch-cache-shardId-000000000010-0000] INFO  s.a.k.r.p.PrefetchRecordsPublisher - shardId-000000000010 :  Thread was interrupted, indicating shutdown was called on the cache.
+06:59:40.517 [prefetch-cache-shardId-000000000026-0000] INFO  s.a.k.r.p.PrefetchRecordsPublisher - shardId-000000000026 :  Thread was interrupted, indicating shutdown was called on the cache.
+06:59:40.516 [prefetch-cache-shardId-000000000031-0000] INFO  s.a.k.r.p.PrefetchRecordsPublisher - shardId-000000000031 :  Thread was interrupted, indicating shutdown was called on the cache.
+06:59:40.517 [prefetch-cache-shardId-000000000016-0000] INFO  s.a.k.r.p.PrefetchRecordsPublisher - shardId-000000000016 :  Thread was interrupted, indicating shutdown was called on the cache.
+06:59:40.517 [prefetch-cache-shardId-000000000020-0000] INFO  s.a.k.r.p.PrefetchRecordsPublisher - shardId-000000000020 :  Thread was interrupted, indicating shutdown was called on the cache.
+06:59:40.517 [prefetch-cache-shardId-000000000030-0000] INFO  s.a.k.r.p.PrefetchRecordsPublisher - shardId-000000000030 :  Thread was interrupted, indicating shutdown was called on the cache.
+06:59:40.517 [prefetch-cache-shardId-000000000006-0000] INFO  s.a.k.r.p.PrefetchRecordsPublisher - shardId-000000000006 :  Thread was interrupted, indicating shutdown was called on the cache.
+06:59:40.517 [prefetch-cache-shardId-000000000027-0000] INFO  s.a.k.r.p.PrefetchRecordsPublisher - shardId-000000000027 :  Thread was interrupted, indicating shutdown was called on the cache.
+06:59:40.517 [prefetch-cache-shardId-000000000025-0000] INFO  s.a.k.r.p.PrefetchRecordsPublisher - shardId-000000000025 :  Thread was interrupted, indicating shutdown was called on the cache.
+06:59:40.517 [prefetch-cache-shardId-000000000029-0000] INFO  s.a.k.r.p.PrefetchRecordsPublisher - shardId-000000000029 :  Thread was interrupted, indicating shutdown was called on the cache.
+06:59:40.517 [prefetch-cache-shardId-000000000022-0000] INFO  s.a.k.r.p.PrefetchRecordsPublisher - shardId-000000000022 :  Thread was interrupted, indicating shutdown was called on the cache.
+06:59:40.517 [prefetch-cache-shardId-000000000007-0000] INFO  s.a.k.r.p.PrefetchRecordsPublisher - shardId-000000000007 :  Thread was interrupted, indicating shutdown was called on the cache.
+06:59:40.518 [prefetch-cache-shardId-000000000024-0000] INFO  s.a.k.r.p.PrefetchRecordsPublisher - shardId-000000000024 :  Thread was interrupted, indicating shutdown was called on the cache.
+06:59:40.518 [prefetch-cache-shardId-000000000000-0000] INFO  s.a.k.r.p.PrefetchRecordsPublisher - shardId-000000000000 :  Thread was interrupted, indicating shutdown was called on the cache.
+06:59:40.518 [prefetch-cache-shardId-000000000028-0000] INFO  s.a.k.r.p.PrefetchRecordsPublisher - shardId-000000000028 :  Thread was interrupted, indicating shutdown was called on the cache.
+06:59:40.518 [prefetch-cache-shardId-000000000001-0000] INFO  s.a.k.r.p.PrefetchRecordsPublisher - shardId-000000000001 :  Thread was interrupted, indicating shutdown was called on the cache.
+06:59:40.518 [prefetch-cache-shardId-000000000014-0000] INFO  s.a.k.r.p.PrefetchRecordsPublisher - shardId-000000000014 :  Thread was interrupted, indicating shutdown was called on the cache.
+06:59:40.518 [prefetch-cache-shardId-000000000017-0000] INFO  s.a.k.r.p.PrefetchRecordsPublisher - shardId-000000000017 :  Thread was interrupted, indicating shutdown was called on the cache.
+06:59:40.518 [prefetch-cache-shardId-000000000009-0000] INFO  s.a.k.r.p.PrefetchRecordsPublisher - shardId-000000000009 :  Thread was interrupted, indicating shutdown was called on the cache.
+06:59:40.518 [prefetch-cache-shardId-000000000011-0000] INFO  s.a.k.r.p.PrefetchRecordsPublisher - shardId-000000000011 :  Thread was interrupted, indicating shutdown was called on the cache.
+06:59:41.517 [RequestedShutdownThread] INFO  s.a.k.c.GracefulShutdownCoordinator$GracefulShutdownCallable - Waiting for 32 record processors to complete final shutdown
+06:59:42.517 [RequestedShutdownThread] INFO  s.a.k.c.GracefulShutdownCoordinator$GracefulShutdownCallable - Waiting for 32 record processors to complete final shutdown
+06:59:42.517 [RequestedShutdownThread] INFO  s.a.k.c.GracefulShutdownCoordinator$GracefulShutdownCallable - Shutdown completed, but shutdownCompleteLatch still had outstanding 32 with a current value of 32. shutdownComplete: false -- Consumer Map: 0
+06:59:43.510 [zio-default-blocking-1-1454383292] INFO  s.a.kinesis.coordinator.Scheduler - All record processors have been shutdown successfully.
+06:59:43.510 [zio-default-blocking-1-1454383292] INFO  s.a.kinesis.coordinator.Scheduler - Starting worker's final shutdown.
+06:59:43.511 [zio-default-blocking-1-1454383292] INFO  s.a.k.m.CloudWatchPublisherRunnable - Shutting down CWPublication thread.
+06:59:44.549 [cw-metrics-publisher] INFO  s.a.k.m.CloudWatchPublisherRunnable - CWPublication thread finished.
+06:59:44.549 [zio-default-blocking-1-1454383292] INFO  s.a.kinesis.coordinator.Scheduler - Worker loop is complete. Exiting from worker.
